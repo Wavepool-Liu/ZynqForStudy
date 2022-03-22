@@ -20,7 +20,7 @@ wire         syn;
 
 
 
-//异步的时钟做同步的处理
+//读空时钟是异步的时钟做同步的处理
 assign  syn=~almost_empty_syn&almost_empty_d0;
 
 
@@ -46,22 +46,35 @@ always @(posedge clk or negedge rst_n) begin
     end
     else begin
         case (state)
-            2'd0:begin //状态1，当发现syn有信号，跳到下一个状态进行延时
+            2'd0:begin //状态1，当发现syn有上升沿信号，跳到下一个状态进行延时
                 if(syn) begin
                     state <=2'b1; 
                 end
                 else
                     state <= state；end
-            2'd1:begin
+            2'd1:begin //状态2：延时4个时钟，跳到下一个状态
                 if(dly_cnt == 4'd10) begin
                     dly_cnt <= 4'b0;
                     state <= 2'd2;
                     fifo_wr_en <= 1'b1;
                 end
+                else
+                    dly_cnt <= dly_cnt + 1'b1;
                 end
-            end
-            default: 
+            2'd2:begin
+                if (almost_full) begin //因为它是写时钟，在同一个时钟下的，取上升沿不用做异步处理
+                    fifo_wr_en <= 1'd0;
+                    fifo_wr_data <= 8'd0;
+                end
+                else begin
+                    fifo_wr_en <= 1'd1; //保持不关断
+                    fifo_wr_data <= fifo_wr_data + 1'd1;
+                end    
+                end
+                default: 
+                    state <= 2'd0;
         endcase
+    end
 end
 
 
