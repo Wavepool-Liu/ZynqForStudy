@@ -1,0 +1,7 @@
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto c59b2da657e04793b2126f9aac02b153 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_axis_mt19937_behav xil_defaultlib.test_axis_mt19937 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+ERROR: [XSIM 43-4287] "E:/Mersenne-Twister/3.Docs/verilog-mersenne/tb/test_axis_mt19937.v" Line 53. Undefined system task '$from_myhdl'
