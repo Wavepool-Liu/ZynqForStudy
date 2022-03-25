@@ -1,0 +1,8 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+E:/ZYNQ/project_fifo/project_fifo/project_fifo.sim/sim_1/behav/xsim/glbl.v,1544155482,verilog,,,,glbl,,,,,,,,
+E:/ZYNQ/project_fifo/project_fifo/project_fifo.srcs/sim_1/new/fifo_tb.v,1597308600,verilog,,,,fifo_tb,,,,,,,,
+E:/ZYNQ/project_fifo/project_fifo/project_fifo.srcs/sources_1/ip/fifo_generator_0_1/sim/fifo_generator_0.v,1597116260,verilog,,E:/ZYNQ/project_fifo/project_fifo/project_fifo.srcs/sources_1/new/test_fifo.v,,fifo_generator_0,,,,,,,,
+E:/ZYNQ/project_fifo/project_fifo/project_fifo.srcs/sources_1/new/test_fifo.v,1597309286,verilog,,E:/ZYNQ/project_fifo/project_fifo/project_fifo.srcs/sim_1/new/fifo_tb.v,,test_fifo,,,,,,,,
