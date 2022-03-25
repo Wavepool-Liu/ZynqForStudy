@@ -35,16 +35,10 @@ read_verilog -library xil_defaultlib {
   E:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/new/fifo_wr.v
   E:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/new/ip_fifo.v
 }
-read_ip -quiet E:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0_1/fifo_generator_0.xci
-set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0_1/fifo_generator_0.xdc]
-set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0_1/fifo_generator_0_clocks.xdc]
-set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0_1/fifo_generator_0_ooc.xdc]
-
-read_ip -quiet e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/ila_0/ila_0.xci
-set_property used_in_synthesis false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/ila_0/ila_0_ooc.xdc]
+read_ip -quiet E:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xci
+set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0.xdc]
+set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fifo.srcs/sources_1/ip/fifo_generator_0/fifo_generator_0_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -54,9 +48,8 @@ set_property used_in_implementation false [get_files -all e:/ZYNQ/ip_fifo/ip_fif
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc E:/ZYNQ/ip_fifo/ip_fifo.srcs/constrs_1/new/IP_FIFO.xdc
-set_property used_in_implementation false [get_files E:/ZYNQ/ip_fifo/ip_fifo.srcs/constrs_1/new/IP_FIFO.xdc]
-
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 

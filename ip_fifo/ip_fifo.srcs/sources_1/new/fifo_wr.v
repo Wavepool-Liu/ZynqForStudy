@@ -1,27 +1,46 @@
 `timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2022/03/24 18:20:18
+// Design Name: 
+// Module Name: fifo_wr
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
 
 module fifo_wr(
-    input               clk,
-    input               rst_n,
-
+    input               clk         ,
+    input               rst_n       ,
+    
     input               almost_empty,
-    input               almost_full,
+    input               almost_full ,
 
-    output reg          fifo_wr_en,
+    output reg          fifo_wr_en  ,
     output reg  [7:0]   fifo_wr_data
+    
     );
-
+    
 reg          almost_empty_d0;
 reg          almost_empty_syn;//syn代表上升沿
 reg   [1:0]  state;    //状态机
 reg   [3:0]  dly_cnt;
 wire         syn;
 
-
-
 //读空时钟是异步的时钟做同步的处理
 assign  syn=~almost_empty_syn&almost_empty_d0;
+
 
 
 always @(posedge clk or negedge rst_n) begin
@@ -79,4 +98,6 @@ end
 
 
 
+    
+    
 endmodule

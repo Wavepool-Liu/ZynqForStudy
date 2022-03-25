@@ -1,26 +1,24 @@
 `timescale 1ns / 1ps
 
-
-//¶¥²ã
-
-
 module ip_fifo(
-input sys_clk,
-input sys_rst_n
+    input sys_clk,
+    input sys_rst_n,
+    output [7:0] dout
     );
+    
 wire        almost_empty;
 wire        almost_full;
 wire        fifo_wr_en;
 wire  [7:0] fifo_wr_data;
 wire        fifo_rd_en;
 // wire  [7:0] fifo_rd_data;
-wire  [7:0] dout;
 wire  full;
 wire  empty;
 wire  [7:0] rd_data_count;
 wire  [7:0] wr_data_count;
-
-
+    
+    
+    
 
 //Àý»¯Ä£¿é
 fifo_wr fifo_wr_u(
@@ -44,6 +42,7 @@ fifo_rd fifo_rd_u(
 
 
 
+
 fifo_generator_0 fifo_generator_0_u (
   .wr_clk(sys_clk),                // input wire wr_clk
   .rd_clk(sys_clk),                // input wire rd_clk
@@ -58,23 +57,5 @@ fifo_generator_0 fifo_generator_0_u (
   .rd_data_count(rd_data_count),  // output wire [7 : 0] rd_data_count
   .wr_data_count(wr_data_count)  // output wire [7 : 0] wr_data_count
 );
-
-
-ila_0 your_instance_name (
-	.clk(sys_clk), // input wire clk
-
-
-	.probe0(fifo_wr_en), // input wire [0:0]  probe0  
-	.probe1(fifo_rd_en), // input wire [0:0]  probe1 
-	.probe2(full), // input wire [0:0]  probe2 
-	.probe3(almost_full), // input wire [0:0]  probe3 
-	.probe4(fifo_wr_data), // input wire [7:0]  probe4 
-	.probe5(dout), // input wire [7:0]  probe5 
-	.probe6(rd_data_count), // input wire [7:0]  probe6 
-	.probe7(wr_data_count), // input wire [7:0]  probe7 
-	.probe8(empty), // input wire [0:0]  probe8 
-	.probe9(almost_empty) // input wire [0:0]  probe9
-);
-
 
 endmodule

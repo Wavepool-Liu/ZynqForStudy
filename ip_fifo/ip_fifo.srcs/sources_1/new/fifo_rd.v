@@ -9,7 +9,7 @@ module fifo_rd(
     input               almost_full,
 
     output reg          fifo_rd_en
-    // input  [7:0]        fifo_rd_data //因为可以引用在线调试的软核读数据，所以可以不要了
+//    input  [7:0]        fifo_rd_data //因为可以引用在线调试的软核读数据，所以可以不要了
 );
 
 reg          almost_full_d0;

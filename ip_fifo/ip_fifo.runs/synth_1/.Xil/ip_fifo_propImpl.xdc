@@ -1,5 +1,0 @@
-set_property SRC_FILE_INFO {cfile:E:/ZYNQ/ip_fifo/ip_fifo.srcs/constrs_1/new/IP_FIFO.xdc rfile:../../../ip_fifo.srcs/constrs_1/new/IP_FIFO.xdc id:1} [current_design]
-set_property src_info {type:XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN R14 [get_ports sys_clk]
-set_property src_info {type:XDC file:1 line:4 export:INPUT save:INPUT read:READ} [current_design]
-set_property PACKAGE_PIN U12 [get_ports sys_rst_n]
