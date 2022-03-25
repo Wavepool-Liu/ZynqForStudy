@@ -1,0 +1,1 @@
+-wto "583b22e25ab64b9db01d344fa8b42cb2" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "tb_led_twinkle2_behav" "xil_defaultlib.tb_led_twinkle2" "xil_defaultlib.glbl" -log "elaborate.log" 
