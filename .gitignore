@@ -19,3 +19,4 @@ bin-release/
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 /5.7010_Program_Demo
+/project_fifo/project_fifo.sim

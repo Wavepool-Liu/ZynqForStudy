@@ -1,7 +1,0 @@
-Running: xsim.dir/tb_led_twinkle2_behav/xsimk.exe -simmode gui -wdb tb_led_twinkle2_behav.wdb -simrunnum 0 -socket 52654
-Design successfully loaded
-Design Loading Memory Usage: 6720 KB (Peak: 6720 KB)
-Design Loading CPU Usage: 15 ms
-Simulation completed
-Simulation Memory Usage: 7436 KB (Peak: 7436 KB)
-Simulation CPU Usage: 31 ms
