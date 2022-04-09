@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 
-module tb_mt32(
+module tb_mt32_pro(
     );
     
 reg             clk                 ;
@@ -73,7 +73,7 @@ end
 
 
 
-axis_mt19937 axis_mt19937_u(
+axis_mt19937_pro axis_mt19937_pro_u(
     .clk                     (clk)               ,
     .rst                     (rst)               ,
     .output_axis_tdata       (output_axis_tdata) ,  

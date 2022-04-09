@@ -29,7 +29,7 @@ THE SOFTWARE.
 /*
  * AXI4-Stream MT19937 Mersenne Twister
  */
-module axis_mt19937
+module axis_mt19937_pro
 (
     input  wire         clk,
     input  wire         rst,
